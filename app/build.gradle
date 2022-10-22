@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'hexlet.code'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+compileJava {
+    options.release = 17
+}
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
