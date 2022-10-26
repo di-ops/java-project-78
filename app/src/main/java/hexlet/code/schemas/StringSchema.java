@@ -1,15 +1,9 @@
 package hexlet.code.schemas;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.function.Predicate;
+public class StringSchema extends BaseSchema<String> {
 
-public class StringSchema {
-
-    private final Set<Predicate<String>> validations = new HashSet<>();
-
-    public boolean isValid(String s) {
-        return validations.stream().allMatch(check -> check.test(s));
+    public StringSchema() {
+        super(String.class);
     }
 
     public StringSchema contains(CharSequence s) {

@@ -24,10 +24,13 @@ class StringSchemaTest {
     }
 
     @Test
-    public void isInvalidEmptyAndNullWhenRequired() {
-        schema.required();
-        assertFalse(schema.isValid(""));
-        assertFalse(schema.isValid(null));
+    public void isInvalidNullWhenRequired() {
+        assertFalse(schema.required().isValid(null));
+    }
+
+    @Test
+    public void isInvalidEmptyWhenRequired() {
+        assertFalse(schema.required().isValid(""));
     }
 
     @Test
