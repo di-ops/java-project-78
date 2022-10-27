@@ -9,9 +9,10 @@ public final class NumberSchema extends BaseSchema<Number> {
     }
 
     public NumberSchema range(Number startRange, Number endRange) {
-        validations.add(val -> val != null
-                && (val.doubleValue() >= startRange.doubleValue())
-                && (val.doubleValue() <= endRange.doubleValue()));
+        validations.add(val -> val == null
+                || ((val.doubleValue() >= startRange.doubleValue())
+                && (val.doubleValue() <= endRange.doubleValue()))
+        );
         return this;
     }
 
@@ -21,7 +22,7 @@ public final class NumberSchema extends BaseSchema<Number> {
     }
 
     public NumberSchema positive() {
-        validations.add(val -> val != null && val.doubleValue() > 0);
+        validations.add(val -> val == null || val.doubleValue() > 0);
         return this;
     }
 }
