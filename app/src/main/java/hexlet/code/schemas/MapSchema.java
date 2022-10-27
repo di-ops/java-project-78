@@ -14,7 +14,7 @@ public final class MapSchema extends BaseSchema<Map> {
         return this;
     }
 
-    public MapSchema sizeOf(int n) {
+    public MapSchema sizeof(int n) {
         validations.add(val -> val.size() == n);
         return this;
     }
