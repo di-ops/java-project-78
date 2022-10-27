@@ -1,18 +1,18 @@
 package hexlet.code;
 
 import hexlet.code.schemas.MapSchema;
-import hexlet.code.schemas.NumberSchema;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MapSchemaTest {
 
     @Test
-    public void testMapSchema(){
+    public void testMapSchema() {
 
         Validator v = new Validator();
         MapSchema schema = v.map();
@@ -33,5 +33,4 @@ class MapSchemaTest {
         data.put("key2", "value2");
         assertTrue(schema.isValid(data));
     }
-
 }
